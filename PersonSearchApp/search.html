@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title>People Search</title>
+</head>
+<body ng-app="App">
+    <div ng-controller="SearchController">
+
+        <!-- Make header -->
+        <h1 style="text-align:center">Search for a person by either first name or last name:</h1>
+        <!-- Make search box -->
+        <form style="text-align:center">
+            Search a Name:
+            <br />
+            <input width="200" height="50" type="text" ng-model="nameString">
+
+            <br />
+            <br />
+            <!--Submit onclick event-->
+            <input type="submit" value="Submit" ng-click="searchPeople()">
+        </form>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!------------------------------------->
+        <!-- Make forms for input of new data-->
+        <!------------------------------------->
+        <form style="text-align:center">
+            <h2 style="text-align:center">Add a new person</h2>
+            <!-- First Name field-->
+            First Name:
+            <br />
+            <input width="200" height="50" type="text" ng-model="fname">
+            <br />
+            <br />
+
+            <!-- Last Name field-->
+            Last Name:
+            <br />
+            <input width="200" height="50" type="text" id="lname" ng-model="lname">
+            <br />
+            <br />
+
+            <!-- Age field -->
+            Age:
+            <br />
+            <input width="200" height="50" type="number" id="age" ng-model="age">
+            <br />
+            <br />
+
+            <!-- Adress Field -->
+            Address:
+            <br />
+            <input width="200" height="50" type="text" id="addr" ng-model="addr">
+            <!-- Interests field-->
+            <br />
+            <br />
+
+            Interests:
+            <br />
+            <input width="200" height="50" type="text" id="interests" ng-model="interests">
+            <!--Image field-->
+            <br />
+            <br />
+
+            Upload an image:
+            <br />
+            <input width="200" height="50" type="file" id="picture" ng-model="picture">
+
+            <br />
+            <br />
+
+            <!--Submit onclick event-->
+            <input type="submit" value="Add Person" ng-click="addPerson()">
+        </form>
+    </div>
+
+    <!-- Make results area-->
+    <!-- JS -->
+    <script src="Scripts/App.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</body>
+</html>

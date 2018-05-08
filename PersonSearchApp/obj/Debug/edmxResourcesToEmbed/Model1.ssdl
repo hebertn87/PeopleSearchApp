@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PeopleDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PeopleDB.dbo.Person' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fname" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="lname" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="addr" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="interests" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="picture" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PeopleDBModelStoreContainer">
+    <EntitySet Name="Person" EntityType="Self.Person" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Person].[id] AS [id], 
+    [Person].[fname] AS [fname], 
+    [Person].[lname] AS [lname], 
+    [Person].[age] AS [age], 
+    [Person].[addr] AS [addr], 
+    [Person].[interests] AS [interests], 
+    [Person].[picture] AS [picture]
+    FROM [dbo].[Person] AS [Person]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
